@@ -105,6 +105,7 @@ button:hover {
   justify-content: space-evenly;
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  overflow: hidden;
 }
 
 .bigText {
@@ -165,7 +166,7 @@ input:active {
 
 table {
   border-collapse: collapse;
-  width: 90%;
+  width: 40vw;
 }
 
 .even {
