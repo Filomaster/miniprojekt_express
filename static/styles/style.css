@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap");
+
+body {
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #58bdc0;
+}
+.adminNav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #349266;
+}
+
+a {
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  transition: 150ms;
+}
+
+.adminNav a {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25em;
+  padding: 0;
+  transition: 150ms;
+}
+.adminNav a:hover {
+  color: #333;
+  background-color: #58c08f;
+}
+
+.adminNav a:focus {
+  color: #333;
+  background-color: #74ffbe;
+}
+a:hover {
+  background-color: #74f9fd;
+  color: #333;
+}
+
+a:focus {
+  background-color: #aefcff;
+  color: #333;
+}
+
+.active {
+  background-color: #007780;
+  color: #ffffff;
+}
+
+.denied {
+  background-color: #c06458;
+  display: flex;
+  justify-content: space-around;
+  color: #333;
+}
+
+.denied a:hover {
+  background-color: #fd7474;
+  color: #333;
+}
+
+.denied a:focus {
+  background-color: #ffaeae;
+  color: #333;
+}
+.denied .active {
+  background-color: #800000;
+  color: #ffffff;
+}
+button {
+  background-color: #58bdc0;
+  border: 0;
+  height: 2em;
+  width: 10em;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25em;
+}
+
+button:hover {
+  background-color: #74f9fd;
+  cursor: pointer;
+}
+
+#content {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.bigText {
+  font-size: 7.5em;
+  color: #444;
+}
+
+.bigTextDenied {
+  font-size: 7.5em;
+  color: #664848;
+}
+
+.infoText {
+  font-size: 1.5em;
+  color: #a34d4d;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+}
+
+form {
+  background-color: #222;
+  border-radius: 50px;
+  width: 30em;
+  height: 50vh;
+  box-shadow: 0 0 10px 5px #11111155;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+input {
+  height: 1.5em;
+  width: 10em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: transparent;
+  color: #74f9fd;
+  border-color: #74f9fd;
+  border-radius: 5px;
+}
+
+input:active {
+  border-color: #aefcff;
+}
+
+.horizontal {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+.even {
+  background-color: #304c4e;
+}
+.odd {
+  background-color: #426769;
+}
+
+td {
+  text-align: center;
+  height: 3em;
+}
+
+tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  color: red;
+  background-color: transparent;
+}

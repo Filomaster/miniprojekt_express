@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/main">Main</a>
+        <a href="/admin">Admin</a>
+        <a href="/login">Login</a>
+        <a class="active" href="/register">Register</a>
+    </div>
+    <div id="content">
+        <div class="bigText">register</div>
+        <div class="formContainer">
+            <form class="form" action="" method="post">
+                <div>
+                    <p>Login:</p>
+                    <input type="text" name="login" id="login">
+                </div>
+                <div>
+                    <p>Password:</p>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="horizontal">
+                    <div>
+                        <p>Age:</p>
+                        <input type="number" name="age" id="age">
+                    </div>
+                    <div>
+                        <p>Gender:</p>
+                        <input type="radio" id="male" name="gender" value="m" checked>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="k">
+                        <label for="female">Female</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="student" id="student" value="yes">
+                        <label for="student"> I'm a student</label>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
