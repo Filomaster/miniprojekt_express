@@ -71,7 +71,11 @@ let users = [
 ];
 
 let logged = false;
-// null;
+let isAsc = true;
+
+module.exports.getAsc = () => {
+  return isAsc;
+};
 
 module.exports.validateLogin = (login) => {
   for (let i = 0; i < users.length; i++) {
@@ -113,11 +117,18 @@ module.exports.getShow = () => {
   });
   return renderPage(content + "</table>", 0);
 };
+
 module.exports.getSort = () => {
-  let content = "<table>";
+  let content = `
+  <form method="POST" onchange="this.submit()">
+  <input type="radio" id="asc" name="asc" value="asc" > </input>
+  <input type="radio" id="dsc" name="asc" value="dsc" > malejąco </input>
+  </form>
+  <table>`;
   users
     .sort((a, b) => {
-      return a.age - b.age;
+      if (!this.getAsc()) return a.age - b.age;
+      else return b.age - a.age;
     })
     .forEach((user) => {
       content += `<tr class="${user.id % 2 == 0 ? "even" : "odd"}">
@@ -132,7 +143,24 @@ module.exports.getSort = () => {
 };
 module.exports.getGender = () => {
   let content = "<table>";
+  let males = [];
+  let females = [];
+
   users.forEach((user) => {
+    if (user.gender == "m") males.push(user);
+    else females.push(user);
+  });
+
+  females.forEach((user) => {
+    content += `<tr class="${user.id % 2 == 0 ? "even" : "odd"}">
+                    <td style="width: 3em" >id:&Tab;${
+                      user.id
+                    } </td>                    
+                    <td style="width: 4em">płeć:&Tab;${user.gender}</td>
+                </tr>`;
+  });
+  content += "</table><table>";
+  males.forEach((user) => {
     content += `<tr class="${user.id % 2 == 0 ? "even" : "odd"}">
                     <td style="width: 3em" >id:&Tab;${
                       user.id
@@ -143,4 +171,9 @@ module.exports.getGender = () => {
   return renderPage(content + "</table>", 1);
 };
 
+module.exports.setAsc = (value) => {
+  isAsc = value;
+};
+
 module.exports.users = users;
+module.exports.isAsc = isAsc;

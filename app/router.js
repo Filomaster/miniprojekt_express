@@ -37,6 +37,7 @@ router.get("/register", (req, res) => {
 router.post("/register", (req, res) => {
   if (!req.body.hasOwnProperty("student")) req.body.student = "no";
   req.body.id = adminPanel.getNextId();
+  req.body.age = parseInt(req.body.age);
   adminPanel.users.push(req.body);
   res.redirect("/login");
   console.log(adminPanel.users);
@@ -53,6 +54,13 @@ router.get("/gender", (req, res) => {
 router.get("/sort", (req, res) => {
   if (adminPanel.getLogin()) res.send(adminPanel.getSort());
   else res.sendFile(path.join(__dirname, "../static/pages/admin_denied.html"));
+});
+
+router.post("/sort", (req, res) => {
+  console.log(req.body.asc);
+  adminPanel.setAsc(req.body.asc == "asc" ? true : false);
+  console.log(adminPanel.getAsc());
+  res.send(adminPanel.getSort());
 });
 
 router.get("/logout", (req, res) => {
