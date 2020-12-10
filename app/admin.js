@@ -120,10 +120,14 @@ module.exports.getShow = () => {
 
 module.exports.getSort = () => {
   let content = `
+  <div>
   <form method="POST" onchange="this.submit()">
+  <label for="asc"> Rosnąco </label>
   <input type="radio" id="asc" name="asc" value="asc" > </input>
-  <input type="radio" id="dsc" name="asc" value="dsc" > malejąco </input>
+  <label for="dsc"> Malejąco </label>
+  <input type="radio" id="dsc" name="asc" value="dsc" > </input>
   </form>
+  </div>
   <table>`;
   users
     .sort((a, b) => {

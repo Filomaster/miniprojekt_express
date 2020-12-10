@@ -129,7 +129,7 @@ button:hover {
   padding-top: 1vh;
 }
 
-form {
+.form {
   background-color: #222;
   border-radius: 50px;
   width: 30em;
